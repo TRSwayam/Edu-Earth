@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :6969)",
+      "Bash(tasklist)",
+      "Bash(findstr node:*)",
+      "Bash(xxd -p)",
+      "Bash(openssl rand:*)"
+    ]
+  }
+}

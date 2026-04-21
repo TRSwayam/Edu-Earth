@@ -1,0 +1,290 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-press-start), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glitch keyframes and animation utilities */
+@keyframes glitch {
+  0% {
+    clip-path: inset(20% 0 50% 0);
+  }
+
+  5% {
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  10% {
+    clip-path: inset(15% 0 55% 0);
+  }
+
+  15% {
+    clip-path: inset(25% 0 35% 0);
+  }
+
+  20% {
+    clip-path: inset(30% 0 40% 0);
+  }
+
+  25% {
+    clip-path: inset(40% 0 20% 0);
+  }
+
+  30% {
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  35% {
+    clip-path: inset(15% 0 55% 0);
+  }
+
+  40% {
+    clip-path: inset(25% 0 35% 0);
+  }
+
+  45% {
+    clip-path: inset(30% 0 40% 0);
+  }
+
+  50% {
+    clip-path: inset(20% 0 50% 0);
+  }
+
+  55% {
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  60% {
+    clip-path: inset(15% 0 55% 0);
+  }
+
+  65% {
+    clip-path: inset(25% 0 35% 0);
+  }
+
+  70% {
+    clip-path: inset(30% 0 40% 0);
+  }
+
+  75% {
+    clip-path: inset(40% 0 20% 0);
+  }
+
+  80% {
+    clip-path: inset(20% 0 50% 0);
+  }
+
+  85% {
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  90% {
+    clip-path: inset(15% 0 55% 0);
+  }
+
+  95% {
+    clip-path: inset(25% 0 35% 0);
+  }
+
+  100% {
+    clip-path: inset(30% 0 40% 0);
+  }
+}
+
+.animate-glitch-after {
+  animation: glitch var(--after-duration) infinite linear alternate-reverse;
+}
+
+.animate-glitch-before {
+  animation: glitch var(--before-duration) infinite linear alternate-reverse;
+}
+
+/* Responsive utilities */
+.container-responsive {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.text-responsive {
+  @apply text-sm sm:text-base md:text-lg lg:text-xl;
+}
+
+.heading-responsive {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.button-responsive {
+  @apply px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 text-sm sm:text-base;
+}
+
+.card-responsive {
+  @apply w-full sm:w-auto min-w-0 sm:min-w-[280px] md:min-w-[320px];
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 640px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-full {
+    width: 100% !important;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: block !important;
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Custom Scrollbar Styling - Retro Blocky */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-left: 4px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fbbf24;
+  border: 4px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+  border-left: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fbbf24 #000;
+}
+
+/* Base focus styles for accessibility */
+*:focus-visible {
+  outline: 4px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Retro blocky scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #fbbf24;
+  border: 4px solid #000;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+  border: 4px solid #000;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Leniz smooth scroll styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+  overscroll-behavior: none;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [class*="lenis__"] {
+  outline: none;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Prevent pull-to-refresh on mobile */
+html.lenis {
+  overscroll-behavior-y: none;
+}
+
+/* Pointer cursor for interactive elements to make links/buttons feel clickable */
+a,
+a:link,
+a:visited {
+  cursor: pointer;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+summary {
+  cursor: pointer;
+}
+
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+}
