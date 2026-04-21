@@ -711,5 +711,4 @@ If EduEarth is making a difference in your educational journey, please consider:
 _Made with 💚 for Educators, Students, and Our Planet_
 
 </div>
-#   E d u - E a r t h  
- 
+#
